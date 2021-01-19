@@ -18,7 +18,7 @@ Help
     -H or -h : Print help
     -S or -s : To Stop warp
     -v : verbose
-    -A : Auto download and configure WG profile
+    -A : Download wgcf and Generate WG profile
     -f : Specfic Profile
 
 ```
