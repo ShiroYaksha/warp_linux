@@ -90,9 +90,16 @@ fi
 }
 
 wgcf() {
+
+wgcf_ver=curl --head --silent  https://github.com/ViRb3/wgcf/releases/latest | grep -Po 'location: https://github\.com/ViRb3/wgcf/releases/tag/v(\d(\.\d)+)' | grep -Po '(\d(\.\d)+)'
+
+
 echo -e "\nDownloading wgcf>> \n"
 name=wgcf_"$wgcf_ver"_linux_amd64
 wget -c -q --show-progress https://github.com/ViRb3/wgcf/releases/download/v$wgcf_ver/$name
+
+echo -e "\n>> Setting it as +X\n\n"
+chmod +x $name
 
 echo -e "\n>> REGISTER WARP\n\n"
 ./$name register
@@ -119,7 +126,7 @@ then
             
             h | H) echo -e "\nHelp >>" 
             echo -e "\n\t-H or -h: To print this Help.\n\t-S or -s: To Stop WARP" 
-            echo -e "\t-v : verbose\n\t-A : Download wgcf and Generate WG profile"
+            echo -e "\t-v : verbose\n\t-A : Download wgcf and Generate WG profile (Linux amd64)"
             echo -e "\t-f : Specfic Profile\n"
             main_flag=false
             ;;
