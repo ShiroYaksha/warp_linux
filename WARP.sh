@@ -3,7 +3,7 @@ re_wireguard=false
 verbose_flag=false
 main_flag=false
 wgcf_flag=false
-wgcf_ver=2.1.4
+wgcf_ver=2.2.18
 files=none
 
 is_offline() {
